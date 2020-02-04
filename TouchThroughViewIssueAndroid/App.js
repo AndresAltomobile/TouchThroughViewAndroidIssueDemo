@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -6,7 +7,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useRef} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +15,7 @@ import {
   View,
   Text,
   StatusBar,
+  Dimensions,
 } from 'react-native';
 
 import {
@@ -24,7 +26,18 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import {
+  TouchThroughView,
+  TouchThroughWrapper,
+} from 'react-native-touch-through-view';
+
+import Carousel from 'react-native-snap-carousel';
+import {Sheet} from './src/Sheet';
+
+const {width} = Dimensions.get('window');
+
+const App = () => {
+  const carouselRef = useRef();
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -67,6 +80,25 @@ const App: () => React$Node = () => {
             <LearnMoreLinks />
           </View>
         </ScrollView>
+        <TouchThroughWrapper
+          style={{position: 'absolute', zIndex: 15, bottom: 0, top: 10}}>
+          <Carousel
+            ref={carouselRef}
+            data={[1, 2, 3, 4, 5]}
+            renderItem={({item}) => {
+              return (
+                <TouchThroughView style={{flex: 1, zIndex: 15}}>
+                  <Sheet />
+                </TouchThroughView>
+              );
+            }}
+            inactiveSlideScale={1}
+            sliderWidth={width}
+            itemWidth={width - 70}
+            useScrollView={true}
+            scrollEnabled={true}
+          />
+        </TouchThroughWrapper>
       </SafeAreaView>
     </>
   );
