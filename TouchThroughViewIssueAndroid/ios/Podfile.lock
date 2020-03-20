@@ -221,7 +221,7 @@ PODS:
     - React
   - RNReanimated (1.7.0):
     - React
-  - RNTouchThroughView (1.1.2):
+  - RNTouchThroughView (1.2.0-beta.0):
     - React
   - Yoga (1.14.0)
 
@@ -348,9 +348,9 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNGestureHandler: 911d3b110a7a233a34c4f800e7188a84b75319c6
   RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
-  RNTouchThroughView: 91384a328296c77bb4a460fde9da9a92146c3635
+  RNTouchThroughView: bb56caa1d4511243c549455075650016559d6b3d
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: afca025d3c8bc783aa5d38702649e28c0fa79211
+PODFILE CHECKSUM: 7221a703fcfb4aea8442af950103d109d8b2e920
 
 COCOAPODS: 1.8.4
